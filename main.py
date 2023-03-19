@@ -1,3 +1,11 @@
+# HACKSCRIPT 4.0 (APSIT) 18/03/23 - 19/03/23
+# Team members:
+# - Vaidik Vadhavana
+# - Anushree Salunke
+# - Abhay Sharma
+# - Priyanshu Agarkar
+
+# Importing required libraries
 import spacy
 from PIL import Image
 from pytesseract import pytesseract
@@ -27,7 +35,7 @@ def print_entities(pipeline, text):
     for entity in document.ents:
         print(entity.text + '->', entity.label_)
 
-
+# Parsing raw text and finding appropriate combinations
 doc = nlp_sm(raw_text)
 vendor_name = [ent.text for ent in doc.ents if ent.label_ == 'ORG'][0]
 invoice_date = [date for date in datefinder.find_dates(raw_text)][0]
