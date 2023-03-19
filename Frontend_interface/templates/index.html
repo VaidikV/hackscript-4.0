@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Matrix 4x4</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <h1>Hack Matrix 4x4</h1>
+    <hr>
+    <form action="/">
+        <div class="main">
+            <!-- <div class="choose-file">
+                <label for="type-file">Choose the type of file:</label>
+                <select name = "type-file" class="file-type">
+                    <option value="Form" class = "form">Form</option>
+                    <option value="Invoice" class="invoice">Invoice</option>
+                  </select>
+            </div> -->
+            <div class="upload-file">
+                <input type="file" onchange="previewImage(event)" accept="image/*, application/pdf" id="myFileInput">
+                <img id="preview">
+            </div>
+
+        </div>
+        <button class="button">
+            Extract Data
+        </button>
+    </form>
+
+    <div class="vl"></div>
+    <table class="display-results">
+        <tr>
+            {% for header in headings %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in results %}
+        <tr>
+            {% for cell in row %}
+            <td>
+                {{ cell }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <button class="button-2">
+        <a href="form.xlsx">Export to Excel</a>
+    </button>
+
+    <script src="static/index.js"></script>
+</body>
+
+</html>
