@@ -5,6 +5,11 @@
 # - Abhay Sharma
 # - Priyanshu Agarkar
 
+
+# This file contains the code where we developed a NLP based solution
+# for the given problem.
+
+
 # Importing required libraries
 import spacy
 from PIL import Image
